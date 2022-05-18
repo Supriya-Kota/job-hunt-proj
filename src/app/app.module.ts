@@ -10,6 +10,8 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { JobcardComponent } from './jobcard/jobcard.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { JobcardComponent } from './jobcard/jobcard.component';
     WishlistComponent,
     LoginComponent,
     SignupComponent,
-    JobcardComponent
+    JobcardComponent,
+    ChangePasswordComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
