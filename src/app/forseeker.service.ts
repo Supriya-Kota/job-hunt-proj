@@ -9,16 +9,15 @@ const PRIVATE='https://www.themuse.com/api/public/jobs?page=1';
 export class ForseekerService {
 
   constructor(private httpCli:HttpClient) { }
-  getjobs()
-  {
+  getjobs() {
     const httpOptions = {
       headers: new HttpHeaders({
         'Accept': 'application/json, text/plain, */*',
-         'Content-Type':'application/json',
-       
+        'Content-Type': 'application/json',
+
       })
     };
     console.log(httpOptions);
-    return this.httpCli.get('${PRIVATE}',httpOptions);
+    return this.httpCli.get(`${PRIVATE}`);
   }
 }

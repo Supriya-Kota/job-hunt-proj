@@ -18,25 +18,22 @@ constructor(private seekerservice:ForseekerService) { }
 
   ngOnInit(): void {
     this.getjobs();
-    
-   
-    
  }
  getjobs()
   {
     this.seekerservice.getjobs().subscribe(
       (response:any)=>
     {
+      console.log(response);
       if(response && response.length>0)
       {
         this.jobs=response;
         this.totaljobs=response.length;
-      } 
+      }
     },
     (error)=>{
       console.log(error.msg);
     }
     );
   }
-
 }
