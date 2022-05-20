@@ -6,13 +6,12 @@ import {Input} from '@angular/core'
   styleUrls: ['./jobcard.component.css']
 })
 export class JobcardComponent implements OnInit {
-
+  @Input('data') job:any;
+  name:string = ''
   constructor() { }
-  @Input('data') job:any
-
-
   ngOnInit(): void {
-    console.log(this.job)
+    if(this.job["categories"].length>0 && this.job["categories"][0]["name"] != undefined){
+      this.name = this.job["categories"][0]["name"];
+    }
   }
-
 }
