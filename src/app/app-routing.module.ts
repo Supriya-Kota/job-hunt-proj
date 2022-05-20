@@ -5,6 +5,7 @@ import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
 import { ChangePasswordComponent} from './change-password/change-password.component';
 import {ProfileComponent} from './profile/profile.component';
+import { FrogotPasswordComponent } from './frogot-password/frogot-password.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'login',pathMatch:'full'},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'change-password',component:ChangePasswordComponent},
   {path:'profile',component:ProfileComponent},
+  {path:'forgot-password',component:FrogotPasswordComponent}
   
 ];
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {Input} from '@angular/core'
 @Component({
   selector: 'app-jobcard',
   templateUrl: './jobcard.component.html',
@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class JobcardComponent implements OnInit {
 
   constructor() { }
+  @Input('data') job:any
+
 
   ngOnInit(): void {
+    console.log(this.job)
   }
 
 }

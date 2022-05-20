@@ -13,6 +13,7 @@ import { SignupComponent } from './signup/signup.component';
 import { JobcardComponent } from './jobcard/jobcard.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ProfileComponent } from './profile/profile.component';
+import { FrogotPasswordComponent } from './frogot-password/frogot-password.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { ProfileComponent } from './profile/profile.component';
     JobcardComponent,
     ChangePasswordComponent,
     ProfileComponent,
+    FrogotPasswordComponent,
     
   ],
   imports: [

@@ -10,14 +10,7 @@ export class ForseekerService {
 
   constructor(private httpCli:HttpClient) { }
   getjobs() {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json',
-
-      })
-    };
-    console.log(httpOptions);
+  
     return this.httpCli.get(`${PRIVATE}`);
   }
 }

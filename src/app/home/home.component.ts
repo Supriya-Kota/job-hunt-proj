@@ -7,7 +7,7 @@ import{ForseekerService} from '../forseeker.service';
 })
 export class HomeComponent implements OnInit {
 
-jobs:any=[];
+jobs:any;
 waitforjobs:any;
 appliedmessage:any;
 alreadyapplied:any;
@@ -24,12 +24,13 @@ constructor(private seekerservice:ForseekerService) { }
     this.seekerservice.getjobs().subscribe(
       (response:any)=>
     {
-      console.log(response);
+      console.log(response['results']);
       if(response && response.length>0)
       {
-        this.jobs=response;
+        this.jobs=response['results'];
         this.totaljobs=response.length;
       }
+      console.log(this.jobs['results'])
     },
     (error)=>{
       console.log(error.msg);
