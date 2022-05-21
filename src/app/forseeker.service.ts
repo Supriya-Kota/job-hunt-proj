@@ -14,3 +14,4 @@ export class ForseekerService {
     return this.httpCli.get(`${PRIVATE}`);
   }
 }
+

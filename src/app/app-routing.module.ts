@@ -7,6 +7,7 @@ import { ChangePasswordComponent} from './change-password/change-password.compon
 import {ProfileComponent} from './profile/profile.component';
 import { FrogotPasswordComponent } from './frogot-password/frogot-password.component';
 
+
 const routes: Routes = [
   {path:'',redirectTo:'login',pathMatch:'full'},
   {path:'login',component:LoginComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'change-password',component:ChangePasswordComponent},
   {path:'profile',component:ProfileComponent},
-  {path:'forgot-password',component:FrogotPasswordComponent}
+  {path:'forgot-password',component:FrogotPasswordComponent},
+  {path:'search/:searchTerm',component:HomeComponent}
   
 ];
 

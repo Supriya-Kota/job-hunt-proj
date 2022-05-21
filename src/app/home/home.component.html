@@ -1,1 +1,20 @@
-<app-jobcard *ngFor="let i of jobs" [data] = "i"></app-jobcard>
+<div class="container-fluid">
+
+<form class="d-flex mt-3 mb-10" role="search" >
+    <input class="form-control me-2" name="search" type="text" placeholder="Search" aria-label="Search" >
+    <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+</div>
+
+
+
+    
+  
+
+<!--<app-jobcard *ngFor="let i of jobs | paginate:{itemsPerPage:20, currentPage:p}" [data] = "i">
+  <pagination-controls (pageChange)="p = $event" class="float-right"></pagination-controls>
+</app-jobcard>
+-->
+
+<app-jobcard *ngFor="let i of jobs"></app-jobcard>
+
