@@ -13,6 +13,7 @@ export class JobcardComponent implements OnInit {
   landing_page:string=''
   constructor() { }
   ngOnInit(): void {
+    console.log(this.job);
     if(this.job["categories"].length>0 && this.job["categories"][0]["name"] != undefined){
       this.name = this.job["categories"][0]["name"];
     }
@@ -25,11 +26,11 @@ export class JobcardComponent implements OnInit {
     if(this.job["refs"]["landing_page"]!= undefined){
       this.landing_page = this.job["refs"]["landing_page"];
     }
-   
-   
-   
-   
+
+
+
+
   }
-  
- 
+
+
 }

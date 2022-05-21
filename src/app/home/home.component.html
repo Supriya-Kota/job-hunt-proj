@@ -1,20 +1,13 @@
-<div class="container-fluid">
+<div class="container-fluid size">
 
 <form class="d-flex mt-3 mb-10" role="search" >
     <input class="form-control me-2" name="search" type="text" placeholder="Search" aria-label="Search" >
     <button class="btn btn-outline-success" type="submit">Search</button>
 </form>
 </div>
-
-
-
-    
-  
-
-<!--<app-jobcard *ngFor="let i of jobs | paginate:{itemsPerPage:20, currentPage:p}" [data] = "i">
-  <pagination-controls (pageChange)="p = $event" class="float-right"></pagination-controls>
-</app-jobcard>
--->
-
-<app-jobcard *ngFor="let i of jobs"></app-jobcard>
+<app-jobcard *ngFor="let i of jobs" [data]="i"></app-jobcard>
+<div class="container d-flex flex-row justify-content-between">
+  <button class="btn btn-primary " (click)="goprev()" [ngClass]="{'disabled':page==1}">previous</button>
+  <button class="btn btn-primary" (click)="goNext()" [ngClass]="{'disabled':isEndPage}">next</button>
+</div>
 

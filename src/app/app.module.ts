@@ -34,7 +34,7 @@ import {NgxPaginationModule} from 'ngx-pagination'
     ChangePasswordComponent,
     ProfileComponent,
     FrogotPasswordComponent,
-    
+
   ],
   imports: [
     //NgxPaginationModule,
