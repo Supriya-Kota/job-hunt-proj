@@ -23,11 +23,24 @@ constructor(private seekerservice:ForseekerService) { }
     
  }
  goprev(){
-  this.getjobs(this.page-1);
+   if(this.search!=undefined){
+    this.getjobs(this.page-1);
+
+   }
+  else{
+    this.searchByCategory(this.page-1,this.search);
+  }
   
  }
  goNext(){
-  this.getjobs(this.page+1);
+  if(this.search!=undefined){
+    this.getjobs(this.page+1);
+
+   }
+  else{
+    this.searchByCategory(this.page-1,this.search);
+  }
+  
   
  }
  getjobs(page:number)
