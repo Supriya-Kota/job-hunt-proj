@@ -1,13 +1,15 @@
 <div class="container-fluid size">
 
 <form class="d-flex mt-3 mb-10" role="search" >
-    <input class="form-control me-2" name="search" type="text" placeholder="Search" aria-label="Search" >
-    <button class="btn btn-outline-success" type="submit">Search</button>
+    <input class="form-control me-2" name="search" type="text" placeholder="Search by Category" aria-label="Search"
+    [(ngModel)]="search" #searchdata="ngModel" >
+    <button class="btn btn-outline-success" type="submit" (click)="searchByCategory(page,search)">Search</button>
 </form>
 </div>
-<app-jobcard *ngFor="let i of jobs" [data]="i"></app-jobcard>
-<div class="container d-flex flex-row justify-content-between">
-  <button class="btn btn-primary " (click)="goprev()" [ngClass]="{'disabled':page==1}">previous</button>
-  <button class="btn btn-primary" (click)="goNext()" [ngClass]="{'disabled':isEndPage}">next</button>
+<div class="container d-flex flex-row justify-content-between mt-3">
+  <button class="btn btn-success " (click)="goprev()" [ngClass]="{'disabled':page==1}">previous</button>
+  <button class="btn btn-success" (click)="goNext()" [ngClass]="{'disabled':isEndPage}">next</button>
 </div>
+<app-jobcard *ngFor="let i of jobs" [data]="i"></app-jobcard>
+
 
