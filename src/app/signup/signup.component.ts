@@ -17,6 +17,7 @@ export class SignupComponent {
    console.log(this.mobile)
    console.log(this.pass)
    console.log(this.email)
+   
   
  }
 
