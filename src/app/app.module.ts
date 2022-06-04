@@ -19,7 +19,8 @@ import { JobcardComponent } from './jobcard/jobcard.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FrogotPasswordComponent } from './frogot-password/frogot-password.component';
-import {NgxPaginationModule} from 'ngx-pagination'
+import {NgxPaginationModule} from 'ngx-pagination';
+import { Jobcard2Component } from './jobcard2/jobcard2.component'
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import {NgxPaginationModule} from 'ngx-pagination'
     ChangePasswordComponent,
     ProfileComponent,
     FrogotPasswordComponent,
+    Jobcard2Component,
 
   ],
   imports: [

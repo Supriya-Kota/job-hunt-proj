@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="card mt-3">
+      <div class="card-header bg-secondary text-white" >
+        <h5>{{ name }}</h5>
+      </div>
+      <div class="card-body bg-secondary text-white">
+        <p>Role-{{ job['name'] }}</p>
+        <p>Location-{{location}}</p>
+        <p>Company Name-{{company}}</p>
+        <!--<p>{{landing_page}}</p>-->
+  
+     
+    <div class="container d-flex flex-row justify-content-between ">
+      <a href="{{landing_page}}" target="_blank" class="btn btn-primary" role="button" aria-pressed="true">Apply</a>
+      <button type="button" class="btn btn-primary">Remove from Wishlist</button>
+    </div>
+  </div>

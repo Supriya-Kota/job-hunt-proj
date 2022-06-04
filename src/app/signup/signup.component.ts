@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -11,7 +12,7 @@ export class SignupComponent {
  mobile:string='';
  pass:string='';
  email:string='';
- onSubmit(){
+ onSignup(){
   
    console.log(this.fullname)
    console.log(this.mobile)

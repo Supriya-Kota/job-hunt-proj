@@ -1,13 +1,14 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
+          
             <div class="card">
                 <div class="text-center">
                     <h1>Signup</h1>
                     <h6>Please enter your details</h6>
                 </div>
                 <form>
-                    <form #SignupForm="ngForm" (ngSubmit)="onSubmit()">
+                    <form #SignupForm="ngForm" (ngSubmit)="onSignup()">
                         <div class="mb-3" >
                             <label for="exampleInputFullName" class="form-label">Full Name</label>
                             <input type="text" class="form-control" id="exampleInputFullName" name="fullname"
@@ -27,7 +28,7 @@
                             <label for="exampleInputMobileNumber" class="form-label">Mobile Number</label>
                             <input type="tel" class="form-control" id="exampleInputMobileNumber" name="mobile"
                         
-                            required minlength="10" [(ngModel)]="mobile" #mobilenumber="ngModel"
+                            required minlength="10" maxlength="10" [(ngModel)]="mobile" #mobilenumber="ngModel"
                             [class.is-invalid]="mobilenumber.invalid && (mobilenumber.dirty || mobilenumber.touched)"
                             [class.is-valid]="mobilenumber.valid && (mobilenumber.dirty || mobilenumber.touched)">
                             <span class="invalid-feedback"
@@ -41,18 +42,20 @@
                           
                         <div class="mb-3">
                           <label for="exampleInputEmail1" class="form-label">Email address</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email"
-                           required [(ngModel)]="email" email="true" #mailid="ngModel"
+                          <input required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email"
+                             [(ngModel)]="email" email="true" #mailid="ngModel"
                             [class.is-invalid]="mailid.invalid && (mailid.dirty || mailid.touched)"
                             [class.is-valid]="mailid.valid && (mailid.dirty || mailid.touched)">
                             <span class="invalid-feedback"
                             *ngIf="(mailid.touched || mailid.dirty) && mailid.errors?.['required']">
                           Email is mandatory</span>
                           <span class="invalid-feedback"
-                          *ngIf="mailid.errors?.['email']">Email is not valid 
+                          *ngIf="(mailid.touched || mailid.dirty) && mailid.errors?.['email']">Email is not valid 
                         </span>
                           
                         </div>
+
+                    
 
 
                         <div class="mb-3">
@@ -66,16 +69,13 @@
                               Password is mandatory</span>
                           <span class="invalid-feedback"
                                 *ngIf="(pwd.touched || pwd.dirty) && pwd.errors?.['minlength']">
-                                Password should be atleast 10  characters</span>
-                          
-                          <span class="invalid-feedback"
-                          *ngIf="(pwd.touched || pwd.dirty) && pwd.errors?.['maxlength']">
-                          Password should be maximum 10 characters</span>
+                                Password should be atleast 4  characters</span>
                         </div>
                         
-                        <a routerLink="/login" class="btn btn-primary" role="button" aria-pressed="true" (click)="onSubmit()">Signup</a>
+                        <a [class.disabled]="SignupForm.invalid" routerLink="/login" class="btn btn-primary mb-3" role="button" aria-pressed="true" (click)="onSignup()">Signup</a>
                       </form>
                       <a style="color:#fff;margin-top:10px;text-decoration: none;" routerLink="/login">Existing User? Click to login!!</a>
+                     
                 </form>
             </div>
         </div>
@@ -85,3 +85,4 @@
 
 
 
+  

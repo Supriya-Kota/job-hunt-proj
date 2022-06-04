@@ -6,18 +6,29 @@
                     <h1>Login</h1>
                     <h6>Please enter email and password</h6>
                 </div>
-                <form>
-                    <form>
+                <form >
+                    <form #LoginForm="ngForm" ngSubmit="onLogin()">
                         <div class="mb-3">
                           <label for="exampleInputEmail1" class="form-label">Email address</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                          <input required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email"
+                          [(ngModel)]="email" email="true" #mailid="ngModel"
+                         [class.is-invalid]="mailid.invalid && (mailid.dirty || mailid.touched)"
+                         [class.is-valid]="mailid.valid && (mailid.dirty || mailid.touched)">
+                         <span class="invalid-feedback"
+                         *ngIf="(mailid.touched || mailid.dirty) && mailid.errors?.['required']">
+                       Email is mandatory</span>
                         </div>
                         <div class="mb-3">
                           <label for="exampleInputPassword1" class="form-label">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1">
+                          <input type="password" class="form-control" id="exampleInputPassword1" name="pass"
+                          required [(ngModel)]="pass" #pwd="ngModel"
+                          [class.is-invalid]="pwd.invalid && (pwd.dirty || pwd.touched)"
+                          [class.is-valid]="pwd.valid && (pwd.dirty || pwd.touched)">
+                          <span class="invalid-feedback"
+                            *ngIf="(pwd.touched || pwd.dirty) && pwd.errors?.['required']">
+                              Password is mandatory</span>
                         </div>
-                        <a routerLink="/home" class="btn btn-primary" role="button" aria-pressed="true">Login</a>
+                        <a [class.disabled]="LoginForm.invalid" routerLink="/home" class="btn btn-primary" role="button" aria-pressed="true">Login</a>
                       </form>
                 </form>
                 <a style="color:#fff;margin-top:10px;text-decoration:none" routerLink="/signup">New User? Click to signup!!</a>
