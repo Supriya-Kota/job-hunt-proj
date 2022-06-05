@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  email:string='';
+  fullname:string='';
   pass:string='';
 
   constructor() { }

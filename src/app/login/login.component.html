@@ -1,4 +1,5 @@
-<div class="container">
+
+  <div class="container">
   <div style="margin-top:10px;display:flex;justify-content:center">
   <div style="display:inline-block;vertical-align:top;">
   <img src="/assets/images/logo.jpg" alt="image" width="40" height="40">
@@ -18,15 +19,16 @@
                 </div>
                 <form >
                     <form #LoginForm="ngForm" ngSubmit="onLogin()">
-                        <div class="mb-3">
-                          <label for="exampleInputEmail1" class="form-label">Email address</label>
-                          <input required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email"
-                          [(ngModel)]="email" email="true" #mailid="ngModel"
-                         [class.is-invalid]="mailid.invalid && (mailid.dirty || mailid.touched)"
-                         [class.is-valid]="mailid.valid && (mailid.dirty || mailid.touched)">
-                         <span class="invalid-feedback"
-                         *ngIf="(mailid.touched || mailid.dirty) && mailid.errors?.['required']">
-                       Email is mandatory</span>
+                        
+                          <div class="mb-3" >
+                            <label for="exampleInputFullName" class="form-label">User Name</label>
+                            <input type="text" class="form-control" id="exampleInputFullName" name="fullname"
+                            required [(ngModel)]="fullname" #username="ngModel"
+                            [class.is-invalid]="username.invalid && (username.dirty || username.touched)"
+                            [class.is-valid]="username.valid && (username.dirty || username.touched)">
+                            <span class="invalid-feedback"
+                            *ngIf="(username.touched || username.dirty) && username.errors?.['required']">
+                          Username is mandatory</span>
                         </div>
                         <div class="mb-3">
                           <label for="exampleInputPassword1" class="form-label">Password</label>
@@ -47,3 +49,4 @@
         </div>
     </div>
 </div>
+

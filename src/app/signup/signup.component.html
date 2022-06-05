@@ -10,7 +10,7 @@
                 <form>
                     <form #SignupForm="ngForm" (ngSubmit)="onSignup()">
                         <div class="mb-3" >
-                            <label for="exampleInputFullName" class="form-label">Full Name</label>
+                            <label for="exampleInputFullName" class="form-label">User Name</label>
                             <input type="text" class="form-control" id="exampleInputFullName" name="fullname"
                             required minlength="3" [(ngModel)]="fullname" #username="ngModel"
                             [class.is-invalid]="username.invalid && (username.dirty || username.touched)"
@@ -24,21 +24,7 @@
                           
                           </div>
                         
-                          <div class="mb-3">
-                            <label for="exampleInputMobileNumber" class="form-label">Mobile Number</label>
-                            <input type="tel" class="form-control" id="exampleInputMobileNumber" name="mobile"
-                        
-                            required minlength="10" maxlength="10" [(ngModel)]="mobile" #mobilenumber="ngModel"
-                            [class.is-invalid]="mobilenumber.invalid && (mobilenumber.dirty || mobilenumber.touched)"
-                            [class.is-valid]="mobilenumber.valid && (mobilenumber.dirty || mobilenumber.touched)">
-                            <span class="invalid-feedback"
-                            *ngIf="(mobilenumber.touched || mobilenumber.dirty) && mobilenumber.errors?.['required']">
-                          Mobile number is mandatory</span>
-                          <span class="invalid-feedback"
-                            *ngIf="(mobilenumber.touched || mobilenumber.dirty) && mobilenumber.errors?.['minlength']">
-                          Mobilenumber should be only 10 characters</span>
                           
-                          </div>
                           
                         <div class="mb-3">
                           <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -70,6 +56,23 @@
                           <span class="invalid-feedback"
                                 *ngIf="(pwd.touched || pwd.dirty) && pwd.errors?.['minlength']">
                                 Password should be atleast 4  characters</span>
+                        </div>
+
+
+                        <div class="mb-3">
+                          <label for="exampleInputMobileNumber" class="form-label">Mobile Number</label>
+                          <input type="tel" class="form-control" id="exampleInputMobileNumber" name="mobile"
+                      
+                          required minlength="10" maxlength="10" [(ngModel)]="mobile" #mobilenumber="ngModel"
+                          [class.is-invalid]="mobilenumber.invalid && (mobilenumber.dirty || mobilenumber.touched)"
+                          [class.is-valid]="mobilenumber.valid && (mobilenumber.dirty || mobilenumber.touched)">
+                          <span class="invalid-feedback"
+                          *ngIf="(mobilenumber.touched || mobilenumber.dirty) && mobilenumber.errors?.['required']">
+                        Mobile number is mandatory</span>
+                        <span class="invalid-feedback"
+                          *ngIf="(mobilenumber.touched || mobilenumber.dirty) && mobilenumber.errors?.['minlength']">
+                        Mobilenumber should be only 10 characters</span>
+                        
                         </div>
                         
                         <a [class.disabled]="SignupForm.invalid" routerLink="/login" class="btn btn-primary mb-3" role="button" aria-pressed="true" (click)="onSignup()">Signup</a>
