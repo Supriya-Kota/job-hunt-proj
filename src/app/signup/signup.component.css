@@ -1,10 +1,10 @@
 .card{
    
     border:none;
-    width:500px;
+    width:50vw;
     padding:40px;
     position:absolute;
-    top:50%;
+    top:57%;
     left:50%;
     transform:translate(-50%,-50%);
     background:hsla(205,46%,30%,1);
@@ -15,6 +15,9 @@
 }
 label{
     color:#fff;
+}
+body{
+    background-color:green;
 }
 
 
