@@ -8,12 +8,13 @@
                     <h6>Please enter email and password</h6>
                 </div>
                 <form >
-                    <form #LoginForm="ngForm" ngSubmit="onLogin()">
+                    <form #LoginForm="ngForm" ngSubmit="loginUser()">
+                      <small class="text-danger">{{msg}}</small>
                         
                           <div class="mb-3" >
                             <label for="exampleInputFullName" class="form-label">User Name</label>
                             <input type="text" class="form-control" id="exampleInputFullName" name="fullname"
-                            required [(ngModel)]="fullname" #username="ngModel"
+                            required [(ngModel)]="user.username" #username="ngModel">
                             [class.is-invalid]="username.invalid && (username.dirty || username.touched)"
                             [class.is-valid]="username.valid && (username.dirty || username.touched)">
                             <span class="invalid-feedback"
@@ -23,7 +24,7 @@
                         <div class="mb-3">
                           <label for="exampleInputPassword1" class="form-label">Password</label>
                           <input type="password" class="form-control" id="exampleInputPassword1" name="pass"
-                          required [(ngModel)]="pass" #pwd="ngModel"
+                          required [(ngModel)]="user.password" #pwd="ngModel">
                           [class.is-invalid]="pwd.invalid && (pwd.dirty || pwd.touched)"
                           [class.is-valid]="pwd.valid && (pwd.dirty || pwd.touched)">
                           <span class="invalid-feedback"
