@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   }
   loginUser(){
     this._service.loginUserFromRemote(this.user).subscribe(
-      data=>{console.log("response received"),
+      data=>{console.log("login success"),
     this._router.navigate(['/home'])},
       error=>{
         console.log("exception occured");

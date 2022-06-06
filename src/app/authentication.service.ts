@@ -10,8 +10,14 @@ export class AuthenticationService {
 
   constructor(private _http:HttpClient) { }
   public loginUserFromRemote(user: User):Observable<any>{
-    return this._http.post<any>("http://localhost:8090/login",user)
+    return this._http.post<any>("http://localhost:8080/login",user)
 
 
   }
+  public RegisterUserFromRemote(user: User):Observable<any>{
+    return this._http.post<any>("http://localhost:8080/register",user)
+
+
+  }
+
 }

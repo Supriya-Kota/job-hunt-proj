@@ -10,11 +10,11 @@
                     <h6>Please enter your details</h6>
                 </div>
                 <form>
-                    <form #SignupForm="ngForm" (ngSubmit)="onSignup()">
+                    <form #SignupForm="ngForm" (ngSubmit)="RegisterUser()">
                         <div class="mb-3" >
                             <label for="exampleInputFullName" class="form-label">User Name</label>
                             <input type="text" class="form-control" id="exampleInputFullName" name="fullname"
-                            required minlength="3" [(ngModel)]="fullname" #username="ngModel"
+                            required minlength="3" [(ngModel)]="user.username" #username="ngModel"
                             [class.is-invalid]="username.invalid && (username.dirty || username.touched)"
                             [class.is-valid]="username.valid && (username.dirty || username.touched)">
                             <span class="invalid-feedback"
@@ -31,7 +31,7 @@
                         <div class="mb-3">
                           <label for="exampleInputEmail1" class="form-label">Email address</label>
                           <input required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email"
-                             [(ngModel)]="email" email="true" #mailid="ngModel"
+                             [(ngModel)]="user.emailid" email="true" #mailid="ngModel"
                             [class.is-invalid]="mailid.invalid && (mailid.dirty || mailid.touched)"
                             [class.is-valid]="mailid.valid && (mailid.dirty || mailid.touched)">
                             <span class="invalid-feedback"
@@ -49,7 +49,7 @@
                         <div class="mb-3">
                           <label for="exampleInputPassword1" class="form-label">Password</label>
                           <input type="password" class="form-control" id="exampleInputPassword1" name="pass"
-                          minlength="4" maxlength="10" required [(ngModel)]="pass" #pwd="ngModel"
+                          minlength="4" maxlength="10" required [(ngModel)]="user.password" #pwd="ngModel"
                           [class.is-invalid]="pwd.invalid && (pwd.dirty || pwd.touched)"
                           [class.is-valid]="pwd.valid && (pwd.dirty || pwd.touched)">
                           <span class="invalid-feedback"
@@ -82,7 +82,7 @@
                           <label for="exampleInputQualification" class="form-label">Qualification</label>
                           <input type="text" class="form-control" id="exampleInputQualification" name="qualification"
                       
-                          required minlength="2" [(ngModel)]="qualification" #qual="ngModel"
+                          required minlength="2" [(ngModel)]="user.qualification" #qual="ngModel"
                           [class.is-invalid]="qual.invalid && (qual.dirty || qual.touched)"
                           [class.is-valid]="qual.valid && (qual.dirty || qual.touched)">
                           <span class="invalid-feedback"
@@ -93,7 +93,7 @@
 
 
                         
-                        <a [class.disabled]="SignupForm.invalid" routerLink="/login" class="btn btn-primary mb-3" role="button" aria-pressed="true" (click)="onSignup()">Signup</a>
+                        <a [class.disabled]="SignupForm.invalid" routerLink="/login" class="btn btn-primary mb-3" role="button" aria-pressed="true">Signup</a>
                       </form>
                       <a style="color:#fff;margin-top:10px;text-decoration: none;" routerLink="/login">Existing User? Click to login!!</a>
                      
