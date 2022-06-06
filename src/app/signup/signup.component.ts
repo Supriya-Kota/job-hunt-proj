@@ -9,13 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class SignupComponent {
 
  fullname:string='';
- mobile:string='';
+ qualification:string='';
  pass:string='';
  email:string='';
  onSignup(){
   
    console.log(this.fullname)
-   console.log(this.mobile)
+   console.log(this.qualification)
    console.log(this.pass)
    console.log(this.email)
    

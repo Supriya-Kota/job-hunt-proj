@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { ChangePasswordComponent} from './change-password/change-password.component';
 import {ProfileComponent} from './profile/profile.component';
 import { FrogotPasswordComponent } from './frogot-password/frogot-password.component';
+import {WishlistComponent} from './wishlist/wishlist.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:'change-password',component:ChangePasswordComponent},
   {path:'profile',component:ProfileComponent},
   {path:'forgot-password',component:FrogotPasswordComponent},
+  {path:'wishlist',component:WishlistComponent},
   {path:'search/:searchTerm',component:HomeComponent}
   
 ];

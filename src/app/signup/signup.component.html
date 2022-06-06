@@ -1,3 +1,4 @@
+<app-navbar2></app-navbar2>
 <div class="container">
     <div class="row">
         <div class="col-md-6">
@@ -59,7 +60,7 @@
                         </div>
 
 
-                        <div class="mb-3">
+                        <!--<div class="mb-3">
                           <label for="exampleInputMobileNumber" class="form-label">Mobile Number</label>
                           <input type="tel" class="form-control" id="exampleInputMobileNumber" name="mobile"
                       
@@ -73,7 +74,23 @@
                           *ngIf="(mobilenumber.touched || mobilenumber.dirty) && mobilenumber.errors?.['minlength']">
                         Mobilenumber should be only 10 characters</span>
                         
+                        </div>-->
+
+
+                        <div class="mb-3">
+                          <label for="exampleInputQualification" class="form-label">Qualification</label>
+                          <input type="text" class="form-control" id="exampleInputQualification" name="qualification"
+                      
+                          required minlength="2" [(ngModel)]="qualification" #qual="ngModel"
+                          [class.is-invalid]="qual.invalid && (qual.dirty || qual.touched)"
+                          [class.is-valid]="qual.valid && (qual.dirty || qual.touched)">
+                          <span class="invalid-feedback"
+                          *ngIf="(qual.touched || qual.dirty) && qual.errors?.['required']">
+                        Mobile number is mandatory</span>
                         </div>
+                        
+
+
                         
                         <a [class.disabled]="SignupForm.invalid" routerLink="/login" class="btn btn-primary mb-3" role="button" aria-pressed="true" (click)="onSignup()">Signup</a>
                       </form>
