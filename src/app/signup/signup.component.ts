@@ -37,16 +37,11 @@ export class SignupComponent implements OnInit {
 }*/
 
 
-
-
-
-
-
-
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
 import { User } from '../user';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
@@ -67,11 +62,12 @@ export class SignupComponent implements OnInit {
   }
 
 
-  register() {
+  register(SignupForm:NgForm) {
     console.log(this.user);
     this.authservice.registerUser(this.user).subscribe({
-      next:(data)=>{this.disp_msg="Congratulations "+this.user.username+
-      " your account created successfully";this.router.navigate(["/login"])},
+      next:(data)=>{console.log("Congratulations "+this.user.username+
+      " your account created successfully");
+      this.router.navigate(["/login"])},
       error:(e)=>{console.log(e);this.disp_msg="Failed to create account ! Reason: User Already Exists with this Username"
       ;
       }

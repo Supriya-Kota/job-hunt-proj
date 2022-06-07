@@ -7,8 +7,7 @@
                     <h1>Login</h1>
                     <h6>Please enter email and password</h6>
                 </div>
-                <form >
-                    <form #LoginForm="ngForm" ngSubmit="login()">
+                    <form #LoginForm="ngForm" (ngSubmit)="login(LoginForm)">
                       <small class="text-danger">{{disp_msg}}</small>
                         
                           <div class="mb-3" >
@@ -31,13 +30,10 @@
                             *ngIf="(pwd.touched || pwd.dirty) && pwd.errors?.['required']">
                               Password is mandatory</span>
                         </div>
-                        <a [class.disabled]="LoginForm.invalid"  class="btn btn-primary" role="button" aria-pressed="true">Login</a>
+                        <button type="submit" [class.disabled]="LoginForm.invalid"  class="btn btn-primary">Login</button>
                       </form>
-                </form>
                 <a style="color:#fff;margin-top:10px;text-decoration:none" routerLink="/signup">New User? Click to signup!!</a>
                 <a style="color:#fff;margin-top:10px;text-decoration:none" routerLink="/forgot-password">Forgot Password</a>
             </div>
         </div>
     </div>
-
-

@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
 
 
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
 import { User } from '../user';
@@ -54,7 +55,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  login() {
+  login(LoginForm: NgForm) {
     console.log("User----->"+this.user.username);
     this.authservice.getToken(this.user).subscribe(
       (data=>{
