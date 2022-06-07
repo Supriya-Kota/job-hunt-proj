@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import {AuthenticationService} from '../authentication.service';
 import {User} from '../user';
 import {Router} from '@angular/router';
@@ -31,4 +31,49 @@ export class LoginComponent implements OnInit {
   }
   
 
+}*/
+
+
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthenticationService } from '../authentication.service';
+import { User } from '../user';
+export const TOKEN_NAME = "token";
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
+export class LoginComponent implements OnInit {
+  user: User;
+  dataa: any;
+  disp_msg!:string;
+  constructor(private authservice: AuthenticationService, private router: Router) {
+    this.user=new User();
+   }
+
+  ngOnInit(): void {
+  }
+  login() {
+    console.log("User----->"+this.user.username);
+    this.authservice.getToken(this.user).subscribe(
+      (data=>{
+        this.dataa=data;
+        console.log(this.dataa);
+        localStorage.setItem(TOKEN_NAME, this.dataa['token']);
+        console.log("updated-->"+TOKEN_NAME);
+
+      console.log("token is:"+this.dataa['token']) ;
+      console.log("Login Successfull!");
+     
+
+      this.router.navigate(["/home"]);
+      }),
+      (error=>{console.log("Error!--Token not generated because of Invalid credentials");
+      this.disp_msg="Login Failed! Please provide valid credentials";
+      })
+
+    )
+    
+  }
 }

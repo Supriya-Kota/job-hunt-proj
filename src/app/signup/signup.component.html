@@ -10,7 +10,7 @@
                     <h6>Please enter your details</h6>
                 </div>
                 <form>
-                    <form #SignupForm="ngForm" (ngSubmit)="RegisterUser()">
+                    <form #SignupForm="ngForm">
                         <div class="mb-3" >
                             <label for="exampleInputFullName" class="form-label">User Name</label>
                             <input type="text" class="form-control" id="exampleInputFullName" name="fullname"
@@ -93,7 +93,7 @@
 
 
                         
-                        <a [class.disabled]="SignupForm.invalid" routerLink="/login" class="btn btn-primary mb-3" role="button" aria-pressed="true">Signup</a>
+                        <a [class.disabled]="SignupForm.invalid" (click)="register()" class="btn btn-primary mb-3" role="button" aria-pressed="true">Signup</a>
                       </form>
                       <a style="color:#fff;margin-top:10px;text-decoration: none;" routerLink="/login">Existing User? Click to login!!</a>
                      

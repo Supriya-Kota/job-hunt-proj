@@ -8,8 +8,8 @@
                     <h6>Please enter email and password</h6>
                 </div>
                 <form >
-                    <form #LoginForm="ngForm" ngSubmit="loginUser()">
-                      <small class="text-danger">{{msg}}</small>
+                    <form #LoginForm="ngForm" ngSubmit="login()">
+                      <small class="text-danger">{{disp_msg}}</small>
                         
                           <div class="mb-3" >
                             <label for="exampleInputFullName" class="form-label">User Name</label>
@@ -31,7 +31,7 @@
                             *ngIf="(pwd.touched || pwd.dirty) && pwd.errors?.['required']">
                               Password is mandatory</span>
                         </div>
-                        <a [class.disabled]="LoginForm.invalid" routerLink="/home" class="btn btn-primary" role="button" aria-pressed="true">Login</a>
+                        <a [class.disabled]="LoginForm.invalid"  class="btn btn-primary" role="button" aria-pressed="true">Login</a>
                       </form>
                 </form>
                 <a style="color:#fff;margin-top:10px;text-decoration:none" routerLink="/signup">New User? Click to signup!!</a>

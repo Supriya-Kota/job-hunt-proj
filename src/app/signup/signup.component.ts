@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 import {AuthenticationService} from '../authentication.service';
 import {User} from '../user';
 import {Router} from '@angular/router';
@@ -11,10 +11,7 @@ import {Router} from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
- /*fullname:string='';
- qualification:string='';
- pass:string='';
- email:string='';*/
+ 
 
  user=new User();
  msg='';
@@ -36,5 +33,50 @@ export class SignupComponent implements OnInit {
    
   
  }
+
+}*/
+
+
+
+
+
+
+
+
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthenticationService } from '../authentication.service';
+import { User } from '../user';
+
+@Component({
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css']
+})
+export class SignupComponent implements OnInit {
+
+  user: User;
+  constructor(private authservice: AuthenticationService, private router: Router) {
+      this.user= new User();
+     }
+
+
+    disp_msg!:String;
+
+  ngOnInit(): void {
+  }
+
+
+  register() {
+    console.log(this.user);
+    this.authservice.registerUser(this.user).subscribe({
+      next:(data)=>{this.disp_msg="Congratulations "+this.user.username+
+      " your account created successfully";this.router.navigate(["/login"])},
+      error:(e)=>{console.log(e);this.disp_msg="Failed to create account ! Reason: User Already Exists with this Username"
+      ;
+      }
+    })
+
+  }
 
 }
