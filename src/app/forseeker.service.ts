@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 
-const LINK='https://www.themuse.com/api/public/jobs?';
+const LINK='http://localhost:8080/jobs/job';
 @Injectable({
   providedIn: 'root'
 })
